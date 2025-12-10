@@ -1,0 +1,10 @@
+{% block content %}
+<div class="d-flex p-5">
+    <form action="{% url 'add_comment' post.id %}" method="POST">
+        {% csrf_token %}
+        <textarea placeholder="Write your comment"   name="comment" ></textarea>
+        <input type="hidden" name="next" value="{{ next_url }}">
+        <button class="btn btn-primary">Post</button>
+    </div>
+    </form>
+{% endblock %}

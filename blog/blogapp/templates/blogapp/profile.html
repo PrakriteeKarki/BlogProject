@@ -1,0 +1,31 @@
+{% extends 'blogapp/base.html' %}
+{% block content %}
+     <div class="container mt-4">
+        <h2>{{ request.user.username }}'s Profile</h2>
+        <p>Email:{{ request.user.email }}</p>
+        <p>Joined On:{{ request.user.date_joined|date:"M d,Y"}}</p>
+
+        <hr>
+        <h3>Your Posts</h3>
+        {% if user_posts %}
+        <div class="row">
+            {% for post in user_posts %}
+            <div class="col-md-4-mb-3">
+                <div class="card">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="Post Image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.caption|truncatewords:15 }}</p>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+     </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "blogapp/base.html" %}
+{% block content %}
+ <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label" >Title</label>
+        <textarea id="title" class="form-control" name="title" placeholder="Enter Title">
+            </textarea>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input class="form-control" type="file" name="image" id="image"> 
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Caption</label>
+        <input class="form-control" placeholder="Enter the caption" name="caption" id="caption"> 
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+ </form>
+{% endblock %}

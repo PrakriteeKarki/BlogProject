@@ -1,0 +1,12 @@
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="form-group">
+    <h3>LogIn Page</h3>
+    <form method="POST" action="{% url 'login' %}">
+         {% csrf_token %}
+         {{ form|crispy }}
+<button type="submit" class="btn btn-primary">LogIn</button>
+</form>
+</div>
+{% endblock %}
