@@ -127,5 +127,5 @@ DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK="bootstrap5"
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://blogproject-ao90.onrender.com",
+    "https://blogproject-1-p71g.onrender.com",
 ]
