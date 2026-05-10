@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7%uk0i!&m=wy!erlqk#d&%i#%l5h6k__qxuv05dyl*^g(snc9p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -125,3 +125,7 @@ MEDIA_ROOT=BASE_DIR/'blogapp'/'media'
 
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK="bootstrap5"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://blogproject-ao90.onrender.com",
+]
